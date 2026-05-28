@@ -45,43 +45,35 @@ export function TopBar({ skill, view, repo, model, gateway, authStatus, authLoad
           <span className="text-[10px] font-mono px-2 py-0.5 bg-aeon-red/10 text-eva-orange uppercase tracking-[0.18em] border border-aeon-red/30">Bankr</span>
         )}
         {authStatus && !authStatus.authenticated && (
-          <button onClick={onSetupAuth} disabled={authLoading} className="btn-solid disabled:opacity-50">
+          <button onClick={onSetupAuth} disabled={authLoading} className="btn-solid-sm disabled:opacity-50">
             {authLoading ? '…' : 'Auth'}
           </button>
         )}
         <select
           value={model}
           onChange={(e) => onUpdateModel(e.target.value)}
-          className="bg-aeon-panel text-primary-70 text-[11px] px-2.5 py-2 border border-[rgba(250,250,250,0.10)] outline-none cursor-pointer font-mono hover:border-[rgba(250,250,250,0.22)] transition-colors"
+          className="bg-aeon-panel text-primary-70 text-[11px] font-mono uppercase tracking-[0.14em] px-3 h-[32px] border border-[rgba(250,250,250,0.10)] outline-none cursor-pointer hover:border-[rgba(250,250,250,0.22)] transition-colors"
         >
           {modelOptions.map((m) => (
             <option key={m.id} value={m.id} className="bg-aeon-panel text-aeon-fg">{m.label}</option>
           ))}
         </select>
-        <button onClick={onShowImport} className="btn-ghost">+ Hire</button>
+        <button onClick={onShowImport} className="btn-ghost-sm">+ Hire</button>
         {repo && (
           <a
             href={`https://github.com/${repo}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[11px] text-primary-40 font-mono border border-[rgba(250,250,250,0.10)] px-3 py-2 hover:border-aeon-red hover:text-eva-orange transition-colors uppercase tracking-[0.14em]"
+            className="btn-quiet"
           >
             GitHub
           </a>
         )}
-        <button
-          onClick={onPull}
-          disabled={pulling}
-          className="relative text-[11px] font-mono text-primary-40 border border-[rgba(250,250,250,0.10)] px-3 py-2 hover:border-[rgba(250,250,250,0.22)] hover:text-primary-70 transition-colors disabled:opacity-50 uppercase tracking-[0.14em]"
-        >
+        <button onClick={onPull} disabled={pulling} className="btn-quiet disabled:opacity-50">
           {behind > 0 && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-aeon-red animate-pulse" />}
           {pulling ? '…' : 'Pull'}
         </button>
-        <button
-          onClick={onSync}
-          disabled={syncing || !hasChanges}
-          className="relative text-[11px] font-mono text-primary-40 border border-[rgba(250,250,250,0.10)] px-3 py-2 hover:border-[rgba(250,250,250,0.22)] hover:text-primary-70 transition-colors disabled:opacity-50 uppercase tracking-[0.14em]"
-        >
+        <button onClick={onSync} disabled={syncing || !hasChanges} className="btn-quiet disabled:opacity-40">
           {hasChanges && <span className="absolute -top-1 -right-1 w-2.5 h-2.5 rounded-full bg-aeon-green" />}
           {syncing ? '…' : 'Push'}
         </button>

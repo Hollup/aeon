@@ -6,6 +6,7 @@ import { MODELS, BANKR_EXTRA_MODELS, DEPARTMENTS } from '../lib/constants'
 import { displayName, getSkillStatus, cronLabel, statusDot, inputCls } from '../lib/utils'
 import { ScheduleEditor } from './ScheduleEditor'
 import { timeAgo } from '../lib/utils'
+import { Scramble } from './ui/Animated'
 
 interface SkillDetailProps {
   skill: Skill
@@ -63,7 +64,7 @@ export function SkillDetail({ skill, runs, model, gateway, busy, onToggle, onRun
           </div>
           <h1 className="font-display uppercase leading-[0.92] tracking-tight text-aeon-fg break-words"
               style={{ fontSize: 'clamp(40px, 6.5vw, 88px)' }}>
-            {displayName(skill.name)}
+            <Scramble key={skill.name} text={displayName(skill.name)} />
           </h1>
           {skill.description && (
             <p className="mt-4 max-w-2xl text-sm text-primary-70 leading-relaxed">{skill.description}</p>

@@ -4,6 +4,7 @@ import { useRef } from 'react'
 import type { Skill, Run } from '../lib/types'
 import { DEPARTMENTS } from '../lib/constants'
 import { timeAgo } from '../lib/utils'
+import { Scramble, Flip, VelocityMarquee } from './ui/Animated'
 
 interface HQOverviewProps {
   skills: Skill[]
@@ -59,7 +60,8 @@ export function HQOverview({ skills, runs, enabledCount, workingCount, onViewRun
           </div>
           <h1 className="font-display uppercase leading-[0.92] tracking-tight text-aeon-fg"
               style={{ fontSize: 'clamp(48px, 8vw, 110px)' }}>
-            AEON <span className="text-aeon-red">HQ</span>
+            <Scramble text="AEON" />{' '}
+            <span className="text-aeon-red"><Scramble text="HQ" delay={180} /></span>
           </h1>
           <p className="mt-4 max-w-xl text-sm text-primary-70 leading-relaxed">
             {enabledCount} skill{enabledCount === 1 ? '' : 's'} on duty across {departments.size} department{departments.size === 1 ? '' : 's'}. {workingCount > 0 ? `${workingCount} currently working.` : 'Idle — waiting for the next cron tick.'}
@@ -75,7 +77,7 @@ export function HQOverview({ skills, runs, enabledCount, workingCount, onViewRun
             >
               <dt className="text-[10px] font-mono uppercase tracking-[0.22em] text-primary-35 mb-2">{s.label}</dt>
               <dd className={`font-display leading-none ${s.tone || 'text-aeon-fg'}`} style={{ fontSize: 'clamp(32px, 3.5vw, 52px)' }}>
-                {s.value}
+                <Flip value={s.value} />
               </dd>
             </div>
           ))}
@@ -98,7 +100,7 @@ export function HQOverview({ skills, runs, enabledCount, workingCount, onViewRun
                 className="spotlight relative overflow-hidden bg-aeon-bg px-6 py-5 flex items-center gap-5 transition-colors hover:bg-aeon-panel-2"
               >
                 <span className="font-display leading-none text-aeon-red" style={{ fontSize: 'clamp(28px, 3vw, 44px)' }}>
-                  {ts.length.toString().padStart(2, '0')}
+                  <Flip value={ts.length} />
                 </span>
                 <div className="min-w-0">
                   <div className="font-display uppercase tracking-wide text-aeon-fg text-base leading-tight">{d.label}</div>
@@ -140,15 +142,16 @@ export function HQOverview({ skills, runs, enabledCount, workingCount, onViewRun
       </Section>
 
       {/* ───── MARQUEE BAND ───── */}
-      <section className="overflow-hidden border-y border-aeon-fg/30">
-        <div className="aeon-marquee py-3 whitespace-nowrap font-display uppercase tracking-wide text-base text-aeon-fg/85">
-          {Array.from({ length: 2 }).map((_, k) => (
-            <span key={k} aria-hidden={k === 1 ? 'true' : undefined} className="inline-block px-7">
-              AEON HQ <i className="not-italic text-aeon-red">★</i> {enabledCount} ON DUTY <i className="not-italic text-aeon-red">★</i> {departments.size} DEPARTMENTS <i className="not-italic text-aeon-red">★</i> {runs.length} RUNS LOGGED <i className="not-italic text-aeon-red">★</i> NO BABYSITTING <i className="not-italic text-aeon-red">★</i>
-            </span>
-          ))}
-        </div>
-      </section>
+      <VelocityMarquee
+        className="overflow-hidden border-y border-aeon-fg/30 whitespace-nowrap py-3 font-display uppercase tracking-wide text-base text-aeon-fg/85"
+        trackClassName="inline-block will-change-transform"
+      >
+        {Array.from({ length: 2 }).map((_, k) => (
+          <span key={k} aria-hidden={k === 1 ? 'true' : undefined} className="inline-block px-7">
+            AEON HQ <i className="not-italic text-aeon-red">★</i> {enabledCount} ON DUTY <i className="not-italic text-aeon-red">★</i> {departments.size} DEPARTMENTS <i className="not-italic text-aeon-red">★</i> {runs.length} RUNS LOGGED <i className="not-italic text-aeon-red">★</i> NO BABYSITTING <i className="not-italic text-aeon-red">★</i>
+          </span>
+        ))}
+      </VelocityMarquee>
     </div>
   )
 }

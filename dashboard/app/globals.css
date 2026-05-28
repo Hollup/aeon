@@ -271,15 +271,19 @@ body::before {
   background: var(--aeon-fg);
   padding: 10px 18px;
   border: 1.5px solid var(--aeon-fg);
-  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.22s ease,
+              color 0.22s ease,
+              border-color 0.22s ease,
+              box-shadow 0.22s ease;
   display: inline-flex; align-items: center; justify-content: center;
 }
 .btn-solid:hover:not(:disabled) {
   background: var(--aeon-red);
   border-color: var(--aeon-red);
   color: var(--aeon-fg-pure);
-  transform: translateY(-1px);
-  box-shadow: 0 6px 18px rgba(210, 75, 64, 0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(210, 75, 64, 0.35);
 }
 .btn-ghost {
   font-family: var(--font-display-dela), 'Arial Black', sans-serif;
@@ -290,12 +294,83 @@ body::before {
   background: transparent;
   padding: 10px 18px;
   border: 1.5px solid var(--aeon-rule-strong);
-  transition: border-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.22s ease,
+              color 0.22s ease;
   display: inline-flex; align-items: center; justify-content: center;
 }
 .btn-ghost:hover:not(:disabled) {
   border-color: var(--aeon-fg);
   color: var(--aeon-fg);
+  transform: translateY(-2px);
+}
+
+/* compact variants used in the topbar — same hover swagger,
+   smaller padding to line up with the small select / icon
+   buttons next to them */
+.btn-solid-sm,
+.btn-ghost-sm {
+  font-family: var(--font-display-dela), 'Arial Black', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 8px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background 0.22s ease,
+              color 0.22s ease,
+              border-color 0.22s ease,
+              box-shadow 0.22s ease;
+}
+.btn-solid-sm {
+  color: var(--aeon-bg-pure);
+  background: var(--aeon-fg);
+  border-color: var(--aeon-fg);
+}
+.btn-solid-sm:hover:not(:disabled) {
+  background: var(--aeon-red);
+  border-color: var(--aeon-red);
+  color: var(--aeon-fg-pure);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(210, 75, 64, 0.3);
+}
+.btn-ghost-sm {
+  color: var(--aeon-fg);
+  background: transparent;
+  border-color: var(--aeon-rule-strong);
+}
+.btn-ghost-sm:hover:not(:disabled) {
+  border-color: var(--aeon-fg);
+  color: var(--aeon-fg);
+  transform: translateY(-1px);
+}
+
+/* Quiet outline button — for tertiary actions (GitHub, Pull,
+   Push) where we want the same height as the others but a
+   dimmer presence. */
+.btn-quiet {
+  font-family: var(--font-mono-space), ui-monospace, monospace;
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--aeon-gray);
+  background: transparent;
+  padding: 8px 12px;
+  border: 1px solid var(--aeon-rule);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.22s ease,
+              color 0.22s ease;
+  position: relative;
+}
+.btn-quiet:hover:not(:disabled) {
+  color: var(--aeon-fg);
+  border-color: var(--aeon-rule-strong);
   transform: translateY(-1px);
 }
 
@@ -360,6 +435,22 @@ body::before {
 }
 .corner-markers { position: relative; }
 .corner-marker { display: none; } /* coral glow + hairline rules replace these */
+
+/* ──────────────────────────────────────────────────────────
+   SHARED MOTION — smooth, consistent ease on interactive surfaces
+   ────────────────────────────────────────────────────────── */
+a,
+button,
+select,
+input[type='text'],
+input[type='password'],
+input[type='number'],
+[role='button'] {
+  transition: color 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              background-color 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              border-color 0.22s cubic-bezier(0.2, 0.8, 0.2, 1),
+              opacity 0.22s ease;
+}
 
 /* ──────────────────────────────────────────────────────────
    SPOTLIGHT — coral glow that follows the cursor across grid

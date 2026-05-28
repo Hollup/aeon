@@ -3,6 +3,7 @@
 import { useState } from 'react'
 import type { Secret } from '../lib/types'
 import { inputCls } from '../lib/utils'
+import { Scramble } from './ui/Animated'
 
 interface SecretsPanelProps {
   secrets: Secret[]
@@ -38,7 +39,8 @@ export function SecretsPanel({ secrets, busy, onSave, onDelete }: SecretsPanelPr
           </span>
           <h1 className="mt-4 font-display uppercase leading-[0.92] tracking-tight text-aeon-fg"
               style={{ fontSize: 'clamp(40px, 6.5vw, 88px)' }}>
-            Access <span className="text-aeon-red">keys</span>
+            <Scramble text="ACCESS" />{' '}
+            <span className="text-aeon-red"><Scramble text="KEYS" delay={180} /></span>
           </h1>
           <p className="mt-4 max-w-xl text-sm text-primary-70 leading-relaxed">
             Set a secret, the channel turns on. Unset secrets are silently skipped — every channel is opt-in.
