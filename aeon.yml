@@ -277,6 +277,8 @@ model: claude-opus-4-8
 
 # AI Gateway — route Claude Code requests through an LLM gateway.
 # provider: direct (default, uses ANTHROPIC_API_KEY) | bankr (uses BANKR_LLM_KEY)
+# For Anthropic-compatible providers, set repo variable ANTHROPIC_BASE_URL
+# and repo secret ANTHROPIC_API_KEY. Example: https://api.deepseek.com/anthropic
 # Bankr docs: https://docs.bankr.bot/llm-gateway/overview
 gateway:
   provider: direct
