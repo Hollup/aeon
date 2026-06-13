@@ -131,7 +131,7 @@ skills:
   skill-health: { enabled: false, schedule: "0 18 * * *" }
   skill-analytics: { enabled: false, schedule: "30 18 * * 3" } # Wednesday — fleet-level skill-run analytics: ranked run counts, exit-taxonomy distribution, anomaly flags (significance-gated)
 
-  self-improve: { enabled: false, schedule: "0 18 1/2 * *" } # every other day — improve agent skills/prompts/config
+  self-improve: { enabled: true, schedule: "0 18 1/2 * *" } # every other day — improve agent skills/prompts/config
   reflect: { enabled: false, schedule: "0 18 * * *" }
 
   action-converter: { enabled: false, schedule: "0 18 * * *" }
