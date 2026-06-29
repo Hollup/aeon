@@ -1,7 +1,7 @@
 {
   "thread-formatter": {
-    "last_dispatch": "2026-06-29T21:09:28Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-06-29T22:20:12Z",
+    "last_status": "dispatched",
     "last_failed": "2026-06-29T21:09:45Z",
     "total_runs": 75,
     "total_successes": 0,
@@ -11,8 +11,8 @@
     "last_error": "be9b015\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "self-improve": {
-    "last_dispatch": "2026-06-29T21:09:28Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-06-29T22:20:12Z",
+    "last_status": "dispatched",
     "last_failed": "2026-06-29T21:09:48Z",
     "total_runs": 102,
     "total_successes": 0,
@@ -22,8 +22,8 @@
     "last_error": "3088513\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "heartbeat": {
-    "last_dispatch": "2026-06-29T21:09:28Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-06-29T22:20:12Z",
+    "last_status": "dispatched",
     "last_failed": "2026-06-29T21:09:52Z",
     "total_runs": 177,
     "total_successes": 0,
@@ -33,7 +33,7 @@
     "last_error": "736bfef\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "engagement-act": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-06-29T21:09:51Z",
     "total_runs": 169,
     "total_successes": 0,
@@ -41,6 +41,6 @@
     "consecutive_failures": 169,
     "success_rate": 0,
     "last_error": "2dc2820\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
-    "last_dispatch": "2026-06-29T21:09:28Z"
+    "last_dispatch": "2026-06-29T22:20:12Z"
   }
 }
