@@ -24,13 +24,13 @@
   "heartbeat": {
     "last_dispatch": "2026-07-19T22:25:45Z",
     "last_status": "failed",
-    "last_failed": "2026-07-19T22:26:11Z",
-    "total_runs": 482,
+    "last_failed": "2026-07-19T23:29:50Z",
+    "total_runs": 483,
     "total_successes": 0,
-    "total_failures": 482,
-    "consecutive_failures": 482,
+    "total_failures": 483,
+    "consecutive_failures": 483,
     "success_rate": 0,
-    "last_error": "bdf3c05\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "84b0898\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "engagement-act": {
     "last_status": "failed",
