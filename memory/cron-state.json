@@ -1,14 +1,14 @@
 {
   "thread-formatter": {
     "last_dispatch": "2026-08-05T07:07:09Z",
-    "last_status": "dispatched",
-    "last_failed": "2026-08-05T04:21:03Z",
-    "total_runs": 329,
+    "last_status": "failed",
+    "last_failed": "2026-08-05T07:07:25Z",
+    "total_runs": 330,
     "total_successes": 0,
-    "total_failures": 329,
-    "consecutive_failures": 329,
+    "total_failures": 330,
+    "consecutive_failures": 330,
     "success_rate": 0,
-    "last_error": "af59eb0\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
+    "last_error": "45f8d61\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "self-improve": {
     "last_dispatch": "2026-08-04T19:58:15Z",
