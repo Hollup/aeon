@@ -22,8 +22,8 @@
     "last_error": "d452b5d\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "heartbeat": {
-    "last_dispatch": "2026-08-17T15:40:02Z",
-    "last_status": "failed",
+    "last_dispatch": "2026-08-17T16:37:16Z",
+    "last_status": "dispatched",
     "last_failed": "2026-08-17T15:40:18Z",
     "total_runs": 1044,
     "total_successes": 0,
@@ -33,7 +33,7 @@
     "last_error": "b521957\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\""
   },
   "engagement-act": {
-    "last_status": "failed",
+    "last_status": "dispatched",
     "last_failed": "2026-08-17T15:40:15Z",
     "total_runs": 1028,
     "total_successes": 0,
@@ -41,6 +41,6 @@
     "consecutive_failures": 1028,
     "success_rate": 0,
     "last_error": "9b79515\",\"total_cost_usd\":0,\"usage\":{\"input_tokens\":0,\"cache_creation_input_tokens\":0,\"cache_read_input_tokens\":0,\"output_tokens\":0,\"server_tool_use\":{\"web_search_requests\":0,\"web_fetch_requests\":0},\"",
-    "last_dispatch": "2026-08-17T15:40:02Z"
+    "last_dispatch": "2026-08-17T16:37:16Z"
   }
 }
