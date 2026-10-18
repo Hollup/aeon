@@ -316,7 +316,7 @@ Or skip the file entirely: the dashboard's **MCP** tab writes `.mcp.json` for yo
 }
 ```
 
-Then just **set the secret** (dashboard MCP tab inline, Settings → Add Credential, or `gh secret set ACME_API_KEY`) — the runner auto-resolves any `${VAR}` your `.mcp.json` references from the repo's secrets, with zero workflow editing. If a referenced secret isn't set, the runner skips MCP for that run and logs a warning instead of breaking the skill.
+Then **set the secret** (dashboard MCP tab inline, Settings → Add Credential, or `gh secret set ACME_API_KEY`) and add that name to the `ALL_SECRETS` allowlist in `.github/workflows/aeon.yml` and `.github/workflows/messages.yml`. The runner resolves `${VAR}` from that allowlist. It does not read the whole secret store — GitHub holds public workflows that do, which is what stopped the scheduler. If a referenced secret isn't available, the runner skips MCP for that run and logs a warning instead of breaking the skill.
 
 Notes: scope is global (`.mcp.json` applies to every skill); add `"alwaysLoad": true` to force a server's tools into context every run; stdio servers run as local processes in the runner, HTTP/SSE servers are reached over the network.
 
